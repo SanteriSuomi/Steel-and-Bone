@@ -1,0 +1,59 @@
+﻿using UnityEditor;
+using UnityEngine;
+
+namespace SB.Unused
+{
+    [CustomEditor(typeof(QuestContext))]
+    public class QuestInspector : Editor
+    {
+        private SerializedProperty assetProperty;
+        private SerializedObject assetObject;
+
+        private void OnEnable()
+        {
+            assetProperty = serializedObject.FindProperty("targetQuestAsset");
+            SetAssetObject();
+        }
+
+        public override void OnInspectorGUI()
+        {
+            EditorGUI.BeginChangeCheck();
+            DrawDefaultInspector();
+
+            //EditorGUILayout.PropertyField(assetProperty, new GUIContent("Target Asset"));
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                SetAssetObject();
+            }
+
+            if (assetObject != null)
+            {
+                SerializedProperty property = assetObject.GetIterator();
+                bool enterChild = true;
+                while (property.NextVisible(enterChild))
+                {
+                    enterChild = false;
+                    EditorGUILayout.PropertyField(property, true);
+                }
+
+                assetObject.ApplyModifiedProperties();
+            }
+
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        private void SetAssetObject()
+        {
+            if (assetProperty.objectReferenceValue != null)
+            {
+                assetObject = new SerializedObject(assetProperty.objectReferenceValue, serializedObject.targetObject);
+                Debug.Log($"Created a new serialized object for {assetObject.targetObject.name}");
+            }
+            else
+            {
+                assetObject = null;
+            }
+        }
+    }
+}

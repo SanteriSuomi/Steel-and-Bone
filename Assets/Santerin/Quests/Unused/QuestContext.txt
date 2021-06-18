@@ -1,0 +1,64 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+namespace SB.Unused
+{
+    /// <summary>
+    /// This script exposes scene objects so that they can be referenced by assets (such as Scriptable Objects).
+    /// </summary>
+    public class QuestContext : MonoBehaviour, IExposedPropertyTable
+    {
+        [SerializeField]
+        private Quest targetQuestAsset = default;
+        [SerializeField]
+        private List<PropertyName> listOfPropertyNames = default;
+        [SerializeField]
+        private List<Object> listOfUnityObjects = default;
+
+        public void ClearReferenceValue(PropertyName id)
+        {
+            int index = listOfPropertyNames.IndexOf(id);
+            if (index >= 0)
+            {
+                listOfPropertyNames.RemoveAt(index);
+                listOfUnityObjects.RemoveAt(index);
+            }
+        }
+
+        public Object GetReferenceValue(PropertyName id, out bool idValid)
+        {
+            int index = listOfPropertyNames.IndexOf(id);
+            if (index >= 0)
+            {
+                idValid = true;
+                return listOfUnityObjects[index];
+            }
+
+            idValid = false;
+            return null;
+        }
+
+        public void SetReferenceValue(PropertyName id, Object value)
+        {
+            if (PropertyName.IsNullOrEmpty(id)) return;
+
+            int index = listOfPropertyNames.IndexOf(id);
+            if (index >= 0)
+            {
+                listOfPropertyNames[index] = id;
+                listOfUnityObjects[index] = value;
+            }
+            else if (value is null)
+            {
+                listOfPropertyNames.Add(id);
+                listOfUnityObjects.Add(value);
+            }
+        }
+
+        private void Awake()
+        {
+            GameObject objectiveLocation = targetQuestAsset.ObjectiveLocation.Resolve(this);
+            QuestCondition questCondition = targetQuestAsset.QuestCondition.Resolve(this);
+        }
+    }
+}

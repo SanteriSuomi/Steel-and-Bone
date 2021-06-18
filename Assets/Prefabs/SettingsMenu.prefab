@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6916089530550596267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6916089530550596261}
+  - component: {fileID: 6916089530550596260}
+  m_Layer: 0
+  m_Name: SettingsMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6916089530550596261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916089530550596267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 950.4171, y: 270.04712, z: -787.49854}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6916089530550596260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916089530550596267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aa653524c3fd54cb23d13f44775fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FxMixer: {fileID: 24100000, guid: cbad89447fb46b24ea17cfe70cf756f0, type: 2}
+  m_MusicVolume: {fileID: 24100000, guid: 82cf986e9238dd14887d90d7fff9b028, type: 2}
+  fxVolumeSlider: {fileID: 0}
+  musicVolumeSlider: {fileID: 0}
+  m_Quality: {fileID: 0}
+  m_Brightness: {fileID: 8885328386180233186, guid: 8256a45bb719be04fb7600324fa068d6,
+    type: 3}
+  m_LightTest: {fileID: 1900432336850157452, guid: 1191400b1a60ffb4eb863cf1f9713317,
+    type: 3}
+  intensityController: {fileID: 0}

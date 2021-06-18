@@ -1,0 +1,18 @@
+﻿using UnityEngine;
+
+public class ChargeCustomYield : CustomYieldInstruction
+{
+    public override bool keepWaiting
+    {
+        get
+        {
+            float start = Time.fixedTime + (Time.fixedDeltaTime * 3);
+            while (Time.fixedTime < start)
+            {
+                // Intentionally empty
+            }
+
+            return true;
+        }
+    }
+}

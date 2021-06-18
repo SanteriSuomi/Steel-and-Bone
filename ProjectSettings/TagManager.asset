@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - BossSpin
+  - ExitBossArea
+  - EndGame
+  - BossAreaMusic
+  - Waypoint
+  - BossSingleAttack
+  - BOSSJump
+  - EnemySword
+  - Enemy
+  - Boss
+  - BossAOE
+  - Foot
+  - Sword
+  - LightAttackSword
+  - Pickup
+  - BossDoorKey
+  - Key
+  - Lvl4Enemy
+  - Fireball
+  - FxTemporaire
+  - Head
+  - Wall
+  - Pillar
+  - StarterSword
+  - BiggerAxe
+  - TrapTrigger
+  - Fist
+  - Throwable
+  - PlayerHealth
+  - Latern
+  - RogueStun
+  - RogueAssasination
+  - PuzzleBox
+  - PuzzleBoxOrange
+  - PuzzleBoxGreen
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Head
+  - Player
+  - Body
+  - Enemy
+  - Hand
+  - Weapon
+  - Throwables
+  - Wall
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - HideInEditor
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

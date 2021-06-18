@@ -1,0 +1,25 @@
+﻿using UnityEngine;
+
+namespace SB.Unused
+{
+    [CreateAssetMenu(fileName = "Quest", menuName = "Scriptable Objects/Quest", order = 0)]
+    public class Quest : ScriptableObject
+    {
+        public bool IsActive { get; set; }
+
+        [SerializeField]
+        private ExposedReference<GameObject> objectiveLocation = default;
+        public ExposedReference<GameObject> ObjectiveLocation => objectiveLocation;
+
+        [SerializeField]
+        private ExposedReference<QuestCondition> questCondition = default;
+        public ExposedReference<QuestCondition> QuestCondition => questCondition;
+
+        [SerializeField]
+        private string title = default;
+        public string Title => title;
+        [SerializeField]
+        private string description = default;
+        public string Description => description;
+    }
+}
